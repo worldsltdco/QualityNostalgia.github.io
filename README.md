@@ -1,1 +1,464 @@
 # QualityNostalgia.github.io
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Quality Nostalgia - Premium Athleisure for Gen X</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c2c2c;
+            background-color: #faf9f8;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #1a2a32;
+            color: #f4e5d7;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .logo p {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #d4b48c;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #f4e5d7;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #d4b48c;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c4a5c 0%, #1a2a32 100%);
+            color: #f4e5d7;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero .tagline {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+            color: #d4b48c;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #d4b48c;
+            color: #1a2a32;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 40px;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .cta-button:hover {
+            background-color: #c4a074;
+            transform: scale(1.02);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #1a2a32;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #d4b48c;
+        }
+
+        /* Product Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 280px;
+            background-color: #e8e0d5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8b7355;
+            font-size: 0.9rem;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #1a2a32;
+        }
+
+        .product-info p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .shop-link {
+            display: inline-block;
+            background-color: #1a2a32;
+            color: #f4e5d7;
+            padding: 0.6rem 1.2rem;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .shop-link:hover {
+            background-color: #2c4a5c;
+        }
+
+        /* About Section */
+        .about {
+            background-color: #f0ebe4;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #1a2a32;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+
+        .about-image {
+            background-color: #d4c4b0;
+            border-radius: 16px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #5c4a2e;
+            font-style: italic;
+        }
+
+        /* Nostalgia Section */
+        .nostalgia {
+            background: linear-gradient(135deg, #f4e5d7 0%, #e8dccc 100%);
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .nostalgia-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .nostalgia-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-weight: bold;
+            color: #1a2a32;
+            font-size: 1.1rem;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            text-align: center;
+            background-color: #1a2a32;
+            color: #f4e5d7;
+            border-radius: 20px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .newsletter-form input {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 40px;
+            width: 280px;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button {
+            background-color: #d4b48c;
+            color: #1a2a32;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #c4a074;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e1e1e;
+            color: #aaa;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #d4b48c;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav ul {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <h1>Quality Nostalgia</h1>
+            <p>athleisure for the generation that refuses to grow up</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#products">Shop</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#nostalgia">Nostalgia</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <h2>Quality Nostalgia</h2>
+    <div class="tagline">Quality athleisureware for a generation that will never be forced to grow up</div>
+    <p>Premium apparel and accessories designed for those who remember life before the internet, but still know how to use it. Made to last, designed with attitude.</p>
+    <a href="#products" class="cta-button">Explore the Collection →</a>
+</section>
+
+<div class="container" id="products">
+    <h2 class="section-title">The Collection</h2>
+    <div class="products-grid">
+        <div class="product-card">
+            <div class="product-image">
+                [Heavyweight T-Shirt Image]
+            </div>
+            <div class="product-info">
+                <h3>The Classic Tee</h3>
+                <p>100% combed cotton, pre-shrunk. Feels like your favorite band tee from '94. Built to survive decades.</p>
+                <a href="#" class="shop-link">Shop Now →</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                [Premium Hoodie Image]
+            </div>
+            <div class="product-info">
+                <h3>The Legacy Hoodie</h3>
+                <p>Heavyweight fleece, double-stitched seams, roomy front pocket. For chilly nights and basement shows.</p>
+                <a href="#" class="shop-link">Shop Now →</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                [Retro Sweatpants Image]
+            </div>
+            <div class="product-info">
+                <h3>The '94 Sweatpants</h3>
+                <p>Relaxed fit, ribbed cuffs, elastic waist. The perfect balance of comfort and don't-care attitude.</p>
+                <a href="#" class="shop-link">Shop Now →</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                [Mug / Tumbler Image]
+            </div>
+            <div class="product-info">
+                <h3>Nostalgia Mug & Tumbler</h3>
+                <p>Durable ceramic and stainless steel. Designs that reference the best decade for coffee and sarcasm.</p>
+                <a href="#" class="shop-link">Shop Now →</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container about" id="about">
+    <div class="about-content">
+        <div class="about-text">
+            <h3>Why We Built This</h3>
+            <p>We noticed something: the generation that defined cool—that grew up on mixtapes, arcades, and the first rumblings of grunge—was being ignored. Everything was made for younger crowds or retirement communities.</p>
+            <p><strong>Quality Nostalgia</strong> is for the rest of us. The ones who still have a rebellious streak but also appreciate a shirt that doesn't fall apart after three washes.</p>
+            <p>This is athleisure with attitude. Comfort you can feel, designs that hit home, and quality that honors where we came from.</p>
+        </div>
+        <div class="about-image">
+            [Photo: Vintage cassette tape or classic arcade image placeholder]
+        </div>
+    </div>
+</div>
+
+<div class="container nostalgia" id="nostalgia">
+    <h2 class="section-title">What We Remember</h2>
+    <div class="nostalgia-grid">
+        <div class="nostalgia-item">📼 Mixtapes that took hours</div>
+        <div class="nostalgia-item">🕹️ Arcades with tokens</div>
+        <div class="nostalgia-item">📺 Friday night videos</div>
+        <div class="nostalgia-item">📞 Busy signals & landlines</div>
+        <div class="nostalgia-item">🎸 MTV when it played music</div>
+        <div class="nostalgia-item">🍕 Pizza Hut Book-It program</div>
+    </div>
+</div>
+
+<div class="container newsletter" id="contact">
+    <h2 class="section-title" style="color: #f4e5d7;">Join the Club</h2>
+    <p>No spam. Just first access to new drops, limited editions, and occasional snark.</p>
+    <form class="newsletter-form" action="#" method="post">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe →</button>
+    </form>
+    <p style="margin-top: 1.5rem; font-size: 0.9rem;">Questions? Reach us: <a href="mailto:hello@qualitynostalgia.com" style="color: #d4b48c;">hello@qualitynostalgia.com</a></p>
+</div>
+
+<footer>
+    <p>&copy; 2026 Quality Nostalgia. Built for the generation that still knows how to use a rotary phone (but chooses not to).</p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem;"><a href="#">Privacy</a> | <a href="#">Returns</a> | <a href="#">Shipping</a></p>
+</footer>
+
+</body>
+</html>
